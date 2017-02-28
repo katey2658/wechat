@@ -45,7 +45,7 @@ function sendMsg(){
 
 
 /**
- * 关于从新开始，让状态规整
+ * 关于从新开始，让状态规整个i他
  * @return {[type]} [description]
  */
 function getStart(){
