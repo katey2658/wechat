@@ -12,7 +12,7 @@ function moreTools(){
 		moretools.style.display="none";
 		bottom.style.height="auto";
 	}
-	
+
 }
 
 /**
@@ -29,7 +29,7 @@ function inputingMeg(){
 
 /*
  * 聊天发送信息
- * 
+ *
  */
 function sendMsg(){
 	var inputNode=document.getElementById("inputtext");
@@ -44,6 +44,10 @@ function sendMsg(){
 }
 
 
+/**
+ * 关于从新开始，让状态规整
+ * @return {[type]} [description]
+ */
 function getStart(){
 	var inputNode=document.getElementById("inputtext");
 	if(inputNode.value==""){
@@ -52,7 +56,7 @@ function getStart(){
 	    var moreIcon=document.getElementById("moreicon");
 	    moreIcon.style.display="block";
 	}
-	
+
 }
 
 /**
@@ -98,4 +102,3 @@ function Message(username,text,photo){
 	this.time=new Date();
 	this.photo=photo;
 }
-
