@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微信聊天界面</title>
+		<link rel="stylesheet" href="../css/chat.css" />
+	</head>
+	<body>
+		<!--头部-->
+		<div id="" class="header">
+			<!--返回-->
+			<div id="" class="item">
+				<img src="../img/return.svg" />
+			</div>
+			<!--标签：备注-->
+			<div class="remark">
+				<span>东东</span>
+			</div>
+
+			<div id="" class="item">
+				<img src="../img/contactz.svg" />
+			</div>
+		</div>
+
+		<div id="chatpanel" class="chatpanel">
+
+		</div>
+		<!--底部-->
+		<div id="bottom" class="bottom">
+			<!--输入框和常驻-->
+			<div id="inputline" class="inputline">
+				<div id="" class="box">
+					<img src="../img/voice.svg"/>
+				</div>
+				<div id="inputbox" class="inputbox">
+					<input id="inputtext" onfocus="inputingMeg()" onfocusout="getStart()"/>
+				</div>
+				<div id="" class="box">
+					<img src="../img/emoji_sad.svg"/>
+				</div>
+				<div id="moreicon" class="box" onclick="moreTools()">
+					<img src="../img/more.svg"/>
+				</div>
+				<button id="btnsend" onclick="sendMsg()" class="btn-send">Send</button>
+
+			</div>
+			<!--更多工具-->
+			<div id="moretools" class="tools" >
+				<div class="toolsblock">
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/camera_2.svg"/>
+					</div>
+					<span>Album</span>
+				</div>
+
+				<!--Use Camera-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/album_1.svg"/>
+					</div>
+					<span>Use Camera</span>
+				</div>
+
+				<!--video call-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/video_call.svg"/>
+					</div>
+					<span>Video Call</span>
+				</div>
+
+				<!--Location-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/location.svg"/>
+					</div>
+					<span>Location</span>
+				</div>
+
+				<!--Red Pocket-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/red.svg"/>
+					</div>
+					<span>Red Pocket</span>
+				</div>
+
+				<!--Transfer-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/transfer.svg"/>
+					</div>
+					<span>Transfer</span>
+				</div>
+				<!--Conetact Card-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/Contact.svg"/>
+					</div>
+					<span>Conetact Card</span>
+				</div>
+
+				<!--Favorites-->
+				<div id="tool" class="tool">
+					<div id="">
+						<img src="../img/box_1.svg"/>
+					</div>
+					<span>Favorites</span>
+				</div>
+				</div>
+
+			</div>
+
+			<!--表情-->
+			<div id="emoji" class="tools">
+
+			</div>
+		</div>
+
+		<script src="../js/chat.js" type="text/javascript">
+		</script>
+	</body>
+</html>

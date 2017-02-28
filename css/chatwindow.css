@@ -1,0 +1,29 @@
+
+.window-style{
+  overflow: auto;
+  background-color: #eaeaea;
+  height: 100%
+}
+
+.header-style{
+  height: 44px;
+  position: fixed;
+  background-color: #000000;
+  top: 0px;
+  right: 0;
+  left: 0;
+
+}
+
+.footer-style{
+  width: 100%;
+  height: 50px;
+  min-height: 50px;
+  border-top: solid 1px #bbb;
+  position: fixed;
+  background-color: #fafafa;
+  bottom: 0px;
+  padding: 0px 50px;
+  left: 0px;
+  overflow: hidden
+}
