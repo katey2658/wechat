@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>drag</title>
+    <style type="text/css">
+      /**
+       *1.html直接引用 写html
+       *2.id 选择 #id
+       *3.class 选择  .class
+       */
+       #taggetid2{
+         float: left;
+         width: 550px;
+         height: 350px;
+         border: 3px solid #ccff66;
+       }
+      #taggetid{
+        float: left;
+        width: 550px;
+        height: 350px;
+        border: 3px dotted #ccff66;
+      }
+      #otherBlock{
+        float: left;
+        width: 1200px;
+        height: 350px;
+        border: 2px dotted #ccff66;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="taggetid2" ondrop="dragAppend(event)"   ondragover="dragover(event)" class="">
+      <!-- 拖动对象
+      1.draable="true"
+      2.
+     -->
+      <img  id="imgmove" draggable="true" ondragstart="dragObj(event)" src="C:\Users\11456\Pictures\android素材库\girls.jpg" alt="">
+    </div>
+
+    <!--  目标投放区-->
+    <div id="taggetid" ondrop="dragAppend(event)" ondragover="dragover(event)" class="">
+      <p id="njxz">晓庄学院</p>
+    </div>
+
+    <div id="otherBlock" ondrop="dropClone(event)" ondragover="dragover(event)" class="">
+
+    </div>
+  </body>
+
+  <script type="text/javascript">
+
+  //定义一个全部变量
+  var copyCount=0;
+
+  function dragObj(event) {
+    //window.alert("开始拖动");
+    //设置关键数据
+    //这个对象的id属性 到投放区时候，可以通过getElementById()：获取
+    event.dataTransfer.setData("text",event.target.id);
+
+    //document.getElementById(event)
+  }
+
+  function dragover(event) {
+    //不处理默认
+    event.preventDefault();
+  }
+
+//拖动到投放时候触发
+  function dragAppend(event) {
+    event.preventDefault();
+    //var njxz=document.getElementById("njxz");
+    //njxz.innerHTML="放开鼠标";
+
+    var dragImg=document.getElementById(event.dataTransfer.getData("text"));
+
+    event.target.appendChild(dragImg)
+    //var img=document.createElement("img");
+    //img.src=dragImg.;
+    //img=dragImg.clone();
+    //document.getElementById("taggetid").appendChild(img);
+  }
+
+//当拖拽进去的时候会发生cloneNode;
+  function dropClone(event) {
+    var dragImg=document.getElementById(event.dataTransfer.getData("text"));
+    //true：如果是true的话那么就是深拷贝，包括自身结点和子节点 相当于，.clone()
+    //false：只拷贝自身
+    var imgCloneNode=dragImg.cloneNode(true);
+    copyCount++;
+    //设置copy图片的ID
+    imgCloneNode.id="copy"+copyCount;
+    var divBlock=document.createElement("div");
+    divBlock.appendChild(imgCloneNode);
+    var imgDocNode=document.createElement("p");
+    imgDocNode.innerHTML="图片id:copy"+copyCount;
+    divBlock.appendChild(imgCloneNode);
+    divBlock.appendChild(imgDocNode);
+    divBlock.style.float="left";
+    //添加文字说明
+    event.target.appendChild(divBlock);
+  }
+  </script>
+</html>
+
+<!-- 作业：HTML标签行级，块级所有标签 -->
