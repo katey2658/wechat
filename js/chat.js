@@ -1,3 +1,7 @@
+/**
+ * 当页面加载完毕的时候，注册相关组件
+ */
+window.addEventListener('load',registeTools,false);
 
 /*
  * 点击更多工具，下面工具栏的出现和消失
@@ -12,7 +16,6 @@ function moreTools(){
 		moretools.style.display="none";
 		bottom.style.height="auto";
 	}
-
 }
 
 /**
@@ -102,3 +105,207 @@ function Message(username,text,photo){
 	this.time=new Date();
 	this.photo=photo;
 }
+
+/**
+ * 注册相关组件工具
+ * @return {[type]} [description]
+ */
+function registeTools() {
+	var albumTool=document.getElementById('album');
+	var useCameraTool=document.getElementById('useCamera');
+	var videoCallTool=document.getElementById('videoCall');
+	var locationTool=document.getElementById('location');
+	var redPocketTool=document.getElementById('redPocket');
+	var transferTool=document.getElementById('transfer');
+	var contactCardTool=document.getElementById('contactCard');
+	var favoritesTool=document.getElementById('favorites');
+  //主要工具按钮的设置
+	albumTool.onclick=album;
+	useCameraTool.onclick=useCamera;
+	videoCallTool.onclick=videoCall;
+	locationTool.onclick=myLocation;
+	redPocketTool.onclick=redPocket;
+	redPocketTool.onclick=transfer;
+	contactCardTool.onclick=contactCard;
+	favoritesTool.onclick=favorites;
+}
+
+
+
+function album() {
+
+}
+
+function useCamera() {
+
+}
+
+function videoCall() {
+
+}
+//-----------------------------------------
+/**
+ * 获取地理位置将地理位置发送给对方
+ * @return {[type]} [description]
+ */
+function myLocation() {
+	if ("geolocation" in navigator) {
+		  /* 地理位置服务可用 */
+			var dialog=document.getElementById("select-dialog");
+			var bgModel=document.getElementById("bg-model")
+			dialog.style.display="block";
+			bgModel.style.display="block";
+
+      //对弹出的两个按钮进行监听
+			var sendCurrentPosition=document.getElementById("sendPosition");
+			var sendRtPocation=document.getElementById("sendRtPocation");
+			sendCurrentPosition.onclick=sendLocation;
+			sendRtPocation.onclick=sendRtLocation;
+
+			bgModel.onclick=dialogNone;
+		//弹出一个选项框，用户可以选择是发送自己的地理位置和实时位置
+	} else {
+  /* 地理位置服务不可用 */
+		alert("地理位置服务不可用");
+	}
+}
+/**
+ * 让弹出的对话框和背景消失
+ * @return {[type]} [description]
+ */
+function dialogNone() {
+	var dialog=document.getElementById("select-dialog");
+	var bgModel=document.getElementById("bg-model")
+	dialog.style.display="none";
+	bgModel.style.display="none";
+}
+
+/**
+ * 进入地图选择发送 发送用户的地理信息
+ * @return {[type]} [description]
+ */
+function sendLocation() {
+	dialogNone();
+	//这里不用选择，直接进行发送
+	navigator.geolocation.getCurrentPosition(function(position) {
+		//获取经度
+		var myLatitude=position.coords.latitude;
+		//获取纬度
+		var myLongitude=position.coords.longitude;
+		alert("myLatitude:"+myLatitude+":"+myLongitude);
+	});
+}
+/**
+ * 发送自己实事地理位置
+ * @return {[type]} [description]
+ */
+function sendRtLocation() {
+	dialogNone();
+	//定时发送自己的地理信息
+	var options = {frequency:6000};
+	navigator.geolocation.watchPosition(locationSuccess, locationError, options);
+}
+/**
+ * 地理位置定位成功
+ * @return {[type]} [description]
+ */
+function locationSuccess(position){
+	//获取经度
+	var myLatitude=position.coords.latitude;
+	//获取纬度
+	var myLongitude=position.coords.longitude;
+
+	//TODO 将地理信息发送出去
+	alert("myLatitude:"+myLatitude+":"+myLongitude);
+}
+/**
+ * 地理位置失败
+ * @param  {[type]} error [description]
+ * @return {[type]}       [description]
+ */
+function locationError(error) {
+	alert("发生了一些错误");
+}
+/**
+ * 发送实时位置
+ * 我回进入地图信息，然后标注自己
+ * @return {[type]}
+ */
+function sendRealTimeLocation() {
+	//弹出另外一个界面
+	navigator.geolocation.getCurrentPosition(function(position) {
+		//获取经度
+		var myLatitude=position.coords.latitude;
+		//获取纬度
+		var myLongitude=position.coords.longitude;
+	});
+}
+//-----------------------------------------
+
+/**
+ * 红包服务
+ * @return {[type]} [description]
+ */
+function redPocket() {
+
+}
+
+/**
+ * 转账交易
+ * @return {[type]} [description]
+ */
+function transfer() {
+
+}
+
+/**
+ * 名片
+ * @return {[type]} [description]
+ */
+function contactCard() {
+
+}
+/**
+ * 收藏
+ * @return {[type]} [description]
+ */
+function favorites() {
+
+}
+
+
+/**
+ * 数据发送服务
+ */
+function send(method,myurl,mydata,mysuccess,myerror) {
+	// $.ajax{
+	// 	type:method,
+	// 	url:myurl,
+	// 	data:mydata,
+	// 	success:mysuccess,
+	// 	error:myerror
+	// }
+}
+
+/**
+ * note:
+   在百度地图中设置位置 cityName是城市名
+	 var map=new BMap.Map('bmapInfo');
+	 map.centerAndZoom(cityName,15);
+
+	 获取当地城市
+	 var cityObj=new BMap.LocalCity();
+	 cityObj.get(getCurrentCity());
+
+	 getCurrentCity(cs){
+	  var cityName=cs.name;
+ }
+ */
+/**
+ * 定时任务
+ * 任务类继承：TimerTask然后重写方法run方法
+ * 定时任务：Timer timer=new Timer();
+ * t.shedule(任务对象，延迟，间隔)；
+ * 第二个参数是可以编程定时时间的额
+ * 使用SimpleDateFormat
+ */

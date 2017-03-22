@@ -5,6 +5,15 @@ body{
 	margin: 0;
 }
 
+input{
+	outline: none;
+}
+
+/*公共的样式*/
+.hide{
+	display: none;
+}
+
 
 /*头部导航条样式*/
 .header{
@@ -84,7 +93,7 @@ body{
 
 .bottom .inputline .inputbox input:focus{
 	border: 0px;
-	border-bottom: 1px solid #d6dcd7;
+	border-bottom: 1px solid #2bbb0c;
 }
 .bottom .inputline .box img{
 	margin:0px auto;
@@ -139,8 +148,12 @@ body{
 	text-align: center;
 }
 .bottom .tools .toolsblock .tool span{
+	width: 100%;
+	height: 100%;
 	font-size: 0.62em;
 	margin-left: 20%;
+	text-align: center;
+	line-height: 100%;
 }
 
 .bottom .tools .toolsblock .tool div img{
@@ -219,4 +232,47 @@ body{
 	font: "微软雅黑";
 	font-size: 0.5em;
 	margin: 16px;
+}
+
+
+/*弹框 对话框*/
+#select-dialog{
+	position: relative;
+	display: inline-block;
+	left: 50%;
+	top: 200px;
+	width: 240px;
+	background-color: #fff;
+	height: 100px;
+	border-radius: 5px;
+	margin-left: -120px;
+	display: none;
+}
+
+#select-dialog .items{
+	position: absolute;
+	width: 80%;
+	height: 100px;
+	margin-left: -25px;
+	list-style: none;
+	opacity:1;
+	z-index: 1;
+}
+#select-dialog .items li:nth-child(1){
+	border-bottom: 1px solid #ccc;
+}
+
+#select-dialog .items li{
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	font-size: 1.1em;
+}
+#bg-model{
+	position: absolute;
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	opacity:0.4;
+	display: none;
 }
