@@ -22,6 +22,8 @@ function moreTools(){
  * 正在输入，需要出现提交按钮，消失moretools
  */
 function inputingMeg(){
+	//首先应该将页面端中工具面板进行隐藏，避免缩放
+	moreTools();
 	var moreIcon=document.getElementById("moreicon");
 	if(!(moreIcon.style.display=="none")){
 		moreIcon.style.display="none";
