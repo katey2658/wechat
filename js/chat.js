@@ -289,6 +289,11 @@ function send(method,myurl,mydata,mysuccess,myerror) {
 	// }
 }
 
+
+function returnToHome() {
+	window.location.href="home.html";
+}
+
 /**
  * note:
    在百度地图中设置位置 cityName是城市名

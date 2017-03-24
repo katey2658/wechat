@@ -1,3 +1,17 @@
+/*公共样式*/
+*{
+	margin:0;
+	padding: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+
 /*头部导航条样式*/
 .header{
 	width: 100%;
@@ -5,23 +19,23 @@
 	position: fixed;
 	top: 0;
 	background-color: #4F4F4F;
+	z-index: 1;
 }
 .header .item{
-	float: left;
-	width: 12%;
-	height: 70%;
-	margin-top: 5%;
+	float: right;
+	width: 24px;
+	height: 24px;
+	margin:16px;
 }
 
 .header .item img{
-	height: 55%;
-	width: 55%;
-	margin-left: 10px;
+	height: 20px;
+	width: 20px;
 }
 
 .header .remark{
 	float: left;
-	width: 75%;
+	width: 30%;
 	height: 50%;
 	border-left: 1px solid #000000;
 	margin-top: 14px;
@@ -32,9 +46,126 @@
 	font-size: 1.15em;
 	color: #ffffff;
 	text-align: center;
-	margin:15px;
+	margin:16px;
+}
+
+
+/*中间的几个面板样式*/
+
+/*消息提醒样式*/
+/* TODO:  */
+
+.window{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.window .content{
+	width: 400%;
+	height: 100%;
+	position: absolute;
+}
+
+.window .content .item{
+	cursor:pointer;
+	float:left;
+	width: 25%;
+	height: 100%;
+	display: inline-block;
+}
+
+.content-chat{
+	background: #f7f7f8;
+}
+
+.content-contacts{
+	background: blue;
+}
+.content-discover{
+	background: red
+}
+.content-me{
+	background: #ccffcc;
+}
+
+/*聊天列表信息*/
+
+#chat-list{
+		margin-top: 50px;
+}
+.chat-item{
+	cursor:pointer;
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+/* 列表项*/
+.chat-item .photo{
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin:5px 16px;
+	background-color: #ccffcc;
+}
+.chat-item .photo img{
+	width: 100%;
+	height: 100%;
+}
+.chat-item .chat-item-content{
+	height: 40px;
+	width: 100%;
+	padding: 5px 10px;
+}
+.chat-item .chat-item-content h4{
+	display: inline-block;
+	height: 25px;
+	margin-top: 5px;
+	font-size: 14px;
+}
+.chat-item .chat-item-content span{
+	width: 60px;
+	display: inline-block;
+	float: right;
+	font-size: 13px;
+	padding-right: 16px;
+}
+.chat-item .chat-item-content p{
+	font-size: 12px;
 }
 
 
 
+
 /*底部样式*/
+.footer{
+	height: 54px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background-color: #FFF;
+	border-top: 1px solid #ccc;
+}
+
+.footer ul{
+	list-style: none;
+}
+
+.footer ul li{
+	float: left;
+	width: 25%;
+}
+/*导航栏按钮*/
+.nav-btn{
+	margin: 0px auto;
+	text-align: center;
+	color: #696969;
+	font-size: 13px;
+}
+.nav-btn img{
+	width: 28px;
+	height: 28px;
+	display: block;
+	margin:3px auto;
+}
