@@ -44,9 +44,45 @@ body{
 .header .remark span{
 	font: "微软雅黑" ;
 	font-size: 1.15em;
-	color: #ffffff;
+	color: #ffffff;                                                                                                                                                                                                                                                         vfffffffffffffffffff
 	text-align: center;
 	margin:16px;
+}
+
+
+#addpanel{
+	margin-top: 50px;
+	position: fixed;
+	z-index: 2;
+	background-color: #4F4F4F;
+	width: 190px;
+	color: #FFF;
+	font-size：14px;
+	right: 16px;
+	display: none;
+}
+
+.itemlist{
+	border: 1px solid #363b3f;
+}
+
+.itemlist li{
+	width: 100%;
+	height: 44px;
+	border-bottom: 1px solid #363b3f;
+}
+
+.itemlist li img{
+	height: 24px;
+	width: 24px;
+	margin:5px 16px;
+}
+.itemlist li span{
+	line-height: 46px;
+	text-align: center;
+}
+.itemlist li img,.itemlist li span{
+	vertical-align: middle;
 }
 
 

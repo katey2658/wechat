@@ -13,12 +13,37 @@
 				<div class="remark">
 					<span>WeChat</span>
 				</div>
-				<div id="" class="item">
+				<div id="btnPanel" class="item">
 					<img src="../img/home/add.svg" draggable="false" />
 				</div>
 				<div id="" class="item">
 					<img src="../img/home/search.svg" draggable="false" />
 				</div>
+			</div>
+			<!-- 添加面板， 弹框 -->
+			<div id="addpanel">
+				<ul class="itemlist">
+					<li class="item">
+						<img src="../img/home/newchat.svg" alt="">
+						<span>New&nbsp;Chat</span>
+					</li>
+					<li class="item">
+						<img src="../img/home/addcontacts.svg" alt="">
+						<span>Add&nbsp;Contacts</span>
+					</li>
+					<li class="item">
+						<img src="../img/home/scan.svg" alt="">
+						<span>Scan&nbsp;QR&nbsp;Code</span>
+					</li>
+					<li class="item">
+						<img src="../img/home/money.svg" alt="">
+						<span>Money&nbsp;</span>
+					</li>
+					<li class="item">
+						<img src="../img/home/helpandfeedback.svg" alt="">
+						<span>Help&nbsp;Feedback</span>
+					</li>
+				</ul>
 			</div>
 
 			<!--中间内容-->
@@ -33,7 +58,7 @@
 
 						<div id="chat-list">
 							<!--  聊天item -->
-							<div id="bugly" class="chat-item" onclick="chatItem()">
+							<div id="bugly" class="chat-item">
 								<div class="photo">
 									<img src="../img/photo/bugly.jpg" alt="">
 								</div>
@@ -42,7 +67,7 @@
 									<p>android 内存优化总结实践</p>
 								</div>
 							</div>
-							<div class="chat-item" onclick="chatItem()">
+							<div class="chat-item">
 								<div class="photo">
 									<img src="../img/photo/me.jpg" alt="">
 								</div>
@@ -173,7 +198,7 @@
 
 			<!--底部-->
 			<div class="footer" draggable="false">
-	    <ul class="nav">
+	    	<ul class="nav">
 	      <!-- chats -->
 	      <li>
 	        <div class="nav-btn" id="chats">
