@@ -1,7 +1,19 @@
+//--------------------------关于全局的一些设置
+
+/**
+ * 创建观念到对象
+ * @type {GoEasy}
+ */
+ var goEasy = new GoEasy({
+ 		appkey: 'dfc8b6e2-5cf5-41a5-9af0-25331e17a4fa'
+ });
 /**
  * 当页面加载完毕的时候，注册相关组件
  */
 window.addEventListener('load',registeTools,false);
+
+
+//---------------------------局部方法和变量
 
 /*
  * 点击更多工具，下面工具栏的出现和消失
@@ -23,12 +35,12 @@ function moreTools(){
  */
 function inputingMeg(){
 	//首先应该将页面端中工具面板进行隐藏，避免缩放
-	moreTools();
+	document.getElementById("moretools").style.display="none";
 	var moreIcon=document.getElementById("moreicon");
 	if(!(moreIcon.style.display=="none")){
 		moreIcon.style.display="none";
-	    var btnSend=document.getElementById("btnsend");
-	    btnSend.style.display="block";
+	  var btnSend=document.getElementById("btnsend");
+	  btnSend.style.display="block";
 	}
 }
 
@@ -40,12 +52,30 @@ function sendMsg(){
 	var inputNode=document.getElementById("inputtext");
 	var text=inputNode.value;
 	if(!text==""){
+		//发布消息
+		goEasy.publish({
+	 	 channel: 'demo_channe2',
+	 	 message: text
+	  });
 		//需要做一些 和服务器交互的ajax事情
 		var msg=new Message('katey2658',text,'../img/photo.jpg');
-	    addMsgNode(msg);
-	    getStart();
-	    inputNode.value="";
+    addMsgNode(msg);
+    getStart();
+    inputNode.value="";
 	}
+}
+
+
+//收到消息
+ goEasy.subscribe({
+	 channel: 'demo_channel',
+	 onMessage: receiveMessage
+});
+//收到消息后的反应
+function receiveMessage(message){
+	//将消息添加到节点上
+	var msg=new Message('other',message.content,'../img/photo2.jpg');
+	addMsgNode(msg);
 }
 
 
@@ -61,7 +91,6 @@ function getStart(){
 	    var moreIcon=document.getElementById("moreicon");
 	    moreIcon.style.display="block";
 	}
-
 }
 
 /**
@@ -288,7 +317,6 @@ function send(method,myurl,mydata,mysuccess,myerror) {
 	// 	error:myerror
 	// }
 }
-
 
 function returnToHome() {
 	window.location.href="home.html";

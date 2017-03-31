@@ -204,16 +204,17 @@ input{
 
 
 .chatpanel .msg-left{
-	margin: 15px 0;
-	width: auto;
+	margin: 10px 0;
+	width: 100%;
 	height: auto;
+	display: inline-block;
 }
 
 .chatpanel .msg-left .photo{
 	float: left;
 	height: 50px;
 	width: 50px;
-	margin: 16px;
+	margin:0 10px;
 	overflow: hidden;
 }
 
@@ -226,12 +227,14 @@ input{
 	float: left;
 	height: auto;
 	width: auto;
+	border-radius: 5px;
 	background-color: #00FF00;
 }
 .chatpanel .msg-left .text span{
+	margin: 20px;
 	font: "微软雅黑";
-	font-size: 0.5em;
-	margin: 16px;
+	font-size: 0.9em;
+	line-height: 40px;
 }
 
 
