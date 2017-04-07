@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <link  href="../css/signup.css"  rel="stylesheet"></link>
+  </head>
+  <body>
+
+    <!--头部-->
+    <div id="" class="header">
+      <!--返回-->
+      <div onclick="returnToHome()" class="item">
+        <img src="../img/return.svg" />
+      </div>
+      <!--标签：备注-->
+      <div class="remark">
+        <span>Mobile&nbsp;Number</span>
+      </div>
+    </div>
+    <!-- 中间内容填写 -->
+    <div class="window">
+      <div class="heigt10">
+      </div>
+      <ul class="register-form">
+        <li>
+          <div class="input-block photo-padding">
+            <span>Full&nbsp;Name</span>
+            <input class="input" type="text" name="" value="" placeholder="Enter Full Name">
+          </div>
+          <!--头像输入-->
+          <div class="load-file">
+            <input type="file" name="" value="">
+            <img class="float-center"src="../img/register/camera-bg.png" alt="">
+          </div>
+        </li>
+        <li class="input-block">
+          <!--  国家-->
+          <span>Country/Region</span>
+          <select class="select-block fr" name="carlist" form="carform">
+            <option value="China">China</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+        </li>
+        <li class="input-block">
+          <select class="select-block" name="carlist" form="carform">
+            <option value="86">+86</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+          <!-- 手机号码 -->
+          <!-- <input type="" name="" value=""> -->
+          <input class="input" type="text" name="" value="" placeholder="Phone Number">
+        </li>
+        <li class="input-block">
+          <span>Password</span>
+          <input class="input" type="password" name="" value="" placeholder="Enter Password">
+        </li>
+        <li >
+          <button class="btn-submit" type="button" name="button">Sign&nbsp;Up</button>
+        </li>
+        <li>
+          <p class="note" >Continuing means you've read and argreed to our <a href="#">Terms of Service</a> anda <a href="#">Privacy Policy</a> </p>
+        </li>
+      </ul>
+    </div>
+
+    <script src="../js/signup.js" charset="utf-8"></script>
+  </body>
+</html>

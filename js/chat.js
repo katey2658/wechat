@@ -11,10 +11,7 @@
  * 当页面加载完毕的时候，注册相关组件
  */
 window.addEventListener('load',registeTools,false);
-
-
 //---------------------------局部方法和变量
-
 /*
  * 点击更多工具，下面工具栏的出现和消失
  */
@@ -29,7 +26,6 @@ function moreTools(){
 		bottom.style.height="auto";
 	}
 }
-
 /**
  * 正在输入，需要出现提交按钮，消失moretools
  */
@@ -43,7 +39,6 @@ function inputingMeg(){
 	  btnSend.style.display="block";
 	}
 }
-
 /*
  * 聊天发送信息
  *
@@ -64,10 +59,8 @@ function sendMsg(){
     inputNode.value="";
 	}
 }
-
-
 //收到消息
- goEasy.subscribe({
+goEasy.subscribe({
 	 channel: 'demo_channel',
 	 onMessage: receiveMessage
 });
