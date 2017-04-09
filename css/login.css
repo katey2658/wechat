@@ -104,11 +104,8 @@ input{
 }
 
 .login-other{
-	position: fixed;
-	bottom: 50px;
+	margin-top: 300px;
 	text-align: center;
-	left: 50%;
-	margin-left: -70px;
 }
 .login-other img,.login-form span{
 	vertical-align: middle;
